@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Заглушка.ру</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <div class="menu">
+        <div class="menu-desc">
+          <span>Диаметр трубы, тип изделия, применение и еще 2 параметра:</span>
+        </div>
+        <div class="menu-container">
+          <div class="menu-options">
+            <div class="menu-options__block">
+              Выберете нужные параметры
+            </div>
+            <input
+              class="menu-options__input"
+              type="checkbox"
+              id="option-list"
+            />
+            <div class="menu-options-container">
+              <ul class="menu-options__list">
+                <li><a href="#diameter" class="list-item">Диаметр трубы</a></li>
+                <li><a href="#type" class="list-item">Тип изделия</a></li>
+                <li><a href="#applying" class="list-item">Применение</a></li>
+                <li><a href="#other" class="list-item">Другое</a></li>
+              </ul>
+
+              <!-- tabs content -->
+              <div class="form form-diameter" id="diameter">
+                <form class="form-check" data-item="diameter">
+                  <input type="number" min="4" max="98" name="diameter" />
+                  <label for="diameter">мм</label>
+                </form>
+                <span class="form-diameter__desc">Диапозон диаметра трубы</span>
+                <div class="form-diameter__range">
+                  min <span>4 мм</span>max <span>98 мм</span>
+                </div>
+              </div>
+              <div class="form form-type" id="type">
+                <form class="form-style form-check" data-item="type">
+                  <label
+                    ><input type="checkbox" value="Внутренние" /><span
+                      class="form-style__option"
+                      >Внутренние</span
+                    ></label
+                  >
+                  <label
+                    ><input type="checkbox" value="Наружные" /><span
+                      class="form-style__option"
+                      >Наружные</span
+                    ></label
+                  >
+                  <label
+                    ><input type="checkbox" value="С тонкой шляпкой" /><span
+                      class="form-style__option"
+                      >С тонкой шляпкой</span
+                    ></label
+                  >
+                  <label
+                    ><input type="checkbox" value="Сферические" /><span
+                      class="form-style__option"
+                      >Сферические</span
+                    ></label
+                  >
+                  <label
+                    ><input type="checkbox" value="С резьбой" /><span
+                      class="form-style__option"
+                      >С резьбой</span
+                    ></label
+                  >
+                  <label
+                    ><input type="checkbox" value="Хромированные" /><span
+                      class="form-style__option"
+                      >Хромированные</span
+                    ></label
+                  >
+                  <label
+                    ><input type="checkbox" value="Металлические" /><span
+                      class="form-style__option"
+                      >Металлические</span
+                    ></label
+                  >
+                  <label
+                    ><input type="checkbox" value="Пластиковые" /><span
+                      class="form-style__option"
+                      >Пластиковые</span
+                    ></label
+                  >
+                </form>
+              </div>
+              <div class="form form-applying" id="applying">
+                <form class="form-style form-check" data-item="applying">
+                  <label
+                    ><input type="checkbox" value="Для стульев" /><span
+                      class="form-style__option"
+                      >Для стульев</span
+                    ></label
+                  >
+                  <label
+                    ><input type="checkbox" value="Заглушки ДУ" /><span
+                      class="form-style__option"
+                      >Заглушки ДУ</span
+                    ></label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      value="Заглушки для отверстий"
+                    /><span class="form-style__option"
+                      >Заглушки для отверстий</span
+                    ></label
+                  >
+                  <label
+                    ><input type="checkbox" value="Для шаровых кранов" /><span
+                      class="form-style__option"
+                      >Для шаровых кранов</span
+                    ></label
+                  >
+                  <label
+                    ><input type="checkbox" value="Пробки" /><span
+                      class="form-style__option"
+                      >Пробки</span
+                    ></label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      value="Эллипсоидные заглушки"
+                    /><span class="form-style__option"
+                      >Эллипсоидные заглушки</span
+                    ></label
+                  >
+                  <label
+                    ><input type="checkbox" value="Заглушки для столбов" /><span
+                      class="form-style__option"
+                      >Заглушки для столбов</span
+                    ></label
+                  >
+                  <label
+                    ><input type="checkbox" value="Заглушки для уголков" /><span
+                      class="form-style__option"
+                      >Заглушки для уголков</span
+                    ></label
+                  >
+                </form>
+              </div>
+              <div class="form form-other" id="other">
+                <form class="form-check" data-item="other">
+                  <label for="search">Поиск</label
+                  ><input id="search" type="text" placeholder="Введите текст" />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,252 @@
+$white: white
+$gray: #f2f2f2
+$orange: #c54004
+$light-gray: #e5e5e5
+$buttons-black: #3d3d3d
+$tabs-hover: #4f4e4e
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  outline: 0
+
+a
+  text-decoration: none
+  color: black
+
+body
+  overflow: hidden
+  scroll-behavior: smooth
+  background-image: url("./image/background.png")
+  font-family: Arial, serif
+
+.page
+  width: 100%
+  padding-top: 10vh
+
+.menu
+  min-height: 90px
+  height: 100%
+  background-color: $white
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  padding: 10px 22px 20px 22px
+  margin: 5vw
+  &-container
+    display: flex
+    justify-content: space-between
+  &-options
+    width: 71%
+    font-size: 14px
+    position: relative
+    & a
+      display: block
+      width: 100%
+    &__block
+      height: 100%
+      min-height: 38px
+      background-color: $gray
+      border: 2px solid #c6c6c6
+      font-size: 18px
+      padding: 5px 15px
+      z-index: 3
+    &__input
+      -webkit-appearance: none
+      -moz-appearance: none
+      display: inline-block
+      border: 5px solid transparent
+      border-top: 7px solid black
+      cursor: pointer
+      transition-duration: 100ms
+      position: absolute
+      top: 15px
+      right: 20px
+      &:checked
+        border-top: 5px solid transparent
+        border-bottom: 7px solid #898989
+        top: 10px
+      &:checked+.menu-options-container
+        display: flex
+    &-container
+      padding: 2px
+      background-color: $white
+      height: 247px
+      width: 616px
+      position: absolute
+      display: none
+      box-shadow: 0 0 4px 2px $gray
+    &__list
+      display: flex
+      flex-direction: column
+      list-style: none
+      max-width: 215px
+      width: 100%
+      & li
+        width: 215px
+        height: 60px
+        display: block
+        font-size: 18px
+        position: relative
+        background-color: $gray
+        margin-bottom: 1px
+        &:hover
+          background-color: $tabs-hover
+        & .decor::before
+          content: ""
+          border: 18px solid transparent
+          border-left: 10px solid $orange
+          position: absolute
+          top: 12px
+          left: 0
+          z-index: 3
+          display: block
+      & a
+        width: 100%
+        height: 100%
+        display: block
+        padding: 20px 0 20px 25px
+        &:hover
+          color: $white
+
+.form
+  display: none
+  width: 100%
+  position: relative
+  &:target
+    display: flex
+    &::after
+      content: ''
+      position: absolute
+      width: 190px
+      top: 0
+      background-color: white
+      padding: 20px 0 20px 25px
+      font-size: 18px
+      color: $orange
+  &-diameter
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    &:target::after
+        content: "Диаметр трубы"
+        left: -215px
+    &::before
+      content: ""
+      background-image: url("./image/diameter.png")
+      background-repeat: no-repeat
+      background-size: cover
+      position: absolute
+      left: 77px
+      top: 49px
+      width: 75px
+      height: 50px
+    & input
+      width: 87px
+      height: 37px
+      font-size: 18px
+      text-align: center
+      border: 1px solid #c6c6c6
+      background-color: $gray
+      position: relative
+      margin-left: 46px
+    & label
+      padding-left: 15px
+    &__desc
+      display: block
+      margin: 25px 0
+      position: relative
+      font-size: 12px
+      &::before,
+      &::after
+        content: ''
+        width: 90px
+        height: 1px
+        background-color: $gray
+        position: absolute
+        top: 6px
+      &::before
+        left: -105px
+      &::after
+        right: -105px
+    &__range
+      font-size: 12px
+      & span
+        font-size: 18px
+        &:nth-child(1)
+          margin-right: 20px
+  &-type
+    &:target::after
+      content: "Тип изделия"
+      left: -215px
+      top: 61px
+  &-applying
+    &:target::after
+      content: "Применение"
+      left: -215px
+      top: 122px
+  &-other
+    align-items: center
+    justify-content: center
+    width: 100%
+    & label
+      margin-right: 10px
+      font-size: 14px
+    & input
+      width: 200px
+      border: 2px solid #c6c6c6
+    &:target::after
+      content: "Другое"
+      left: -215px
+      top: 183px
+      
+  &-style
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    overflow-y: scroll
+    padding-top: 13px
+    padding-left: 35px
+    & label:hover > .form-style__option
+      background-color: $tabs-hover
+      color: $white
+    & label:hover > .form-style__option::after
+      border-left: 12px solid $tabs-hover
+    &__option
+      padding: 8px 0 8px 35px
+      width: 295px
+      display: inline-block
+      position: relative
+      cursor: pointer
+      &::after
+        content: ''
+        border: 16px solid transparent
+        border-left: 12px solid transparent
+        position: absolute
+        top: 0
+        right: -28px
+      &::before
+        content: ''
+        position: absolute
+        top: 13px
+        left: 11px
+        width: 5px
+        height: 5px
+        border-left: 1px solid $white
+        border-bottom: 1px solid $white
+        transform: rotate(-135deg)
+        transition-duration: 400ms
+    & input
+      visibility: hidden
+      width: 0
+      &:checked + .form-style__option
+        background-color: $orange
+        color: $white
+      &:checked + .form-style__option::after
+        border-left: 12px solid $orange
+      &:checked + .form-style__option::before
+        transform: rotate(-45deg)
+        width: 10px
+        top: 10px

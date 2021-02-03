@@ -1,0 +1,294 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  overflow: hidden;
+  scroll-behavior: smooth;
+  background-image: url("./image/background.png");
+  font-family: Arial, serif;
+}
+
+.page {
+  width: 100%;
+  padding-top: 10vh;
+}
+
+.menu {
+  min-height: 90px;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 22px 20px 22px;
+  margin: 5vw;
+}
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+}
+.menu-options {
+  width: 71%;
+  font-size: 14px;
+  position: relative;
+}
+.menu-options a {
+  display: block;
+  width: 100%;
+}
+.menu-options__block {
+  height: 100%;
+  min-height: 38px;
+  background-color: #f2f2f2;
+  border: 2px solid #c6c6c6;
+  font-size: 18px;
+  padding: 5px 15px;
+  z-index: 3;
+}
+.menu-options__input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-block;
+  border: 5px solid transparent;
+  border-top: 7px solid black;
+  cursor: pointer;
+  transition-duration: 100ms;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+.menu-options__input:checked {
+  border-top: 5px solid transparent;
+  border-bottom: 7px solid #898989;
+  top: 10px;
+}
+.menu-options__input:checked + .menu-options-container {
+  display: flex;
+}
+.menu-options-container {
+  padding: 2px;
+  background-color: white;
+  height: 247px;
+  width: 616px;
+  position: absolute;
+  display: none;
+  box-shadow: 0 0 4px 2px #f2f2f2;
+}
+.menu-options__list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  max-width: 215px;
+  width: 100%;
+}
+.menu-options__list li {
+  width: 215px;
+  height: 60px;
+  display: block;
+  font-size: 18px;
+  position: relative;
+  background-color: #f2f2f2;
+  margin-bottom: 1px;
+}
+.menu-options__list li:hover {
+  background-color: #4f4e4e;
+}
+.menu-options__list li .decor::before {
+  content: "";
+  border: 18px solid transparent;
+  border-left: 10px solid #c54004;
+  position: absolute;
+  top: 12px;
+  left: 0;
+  z-index: 3;
+  display: block;
+}
+.menu-options__list a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 20px 0 20px 25px;
+}
+.menu-options__list a:hover {
+  color: white;
+}
+
+.form {
+  display: none;
+  width: 100%;
+  position: relative;
+}
+.form:target {
+  display: flex;
+}
+.form:target::after {
+  content: "";
+  position: absolute;
+  width: 190px;
+  top: 0;
+  background-color: white;
+  padding: 20px 0 20px 25px;
+  font-size: 18px;
+  color: #c54004;
+}
+.form-diameter {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form-diameter:target::after {
+  content: "Диаметр трубы";
+  left: -215px;
+}
+.form-diameter::before {
+  content: "";
+  background-image: url("./image/diameter.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 77px;
+  top: 49px;
+  width: 75px;
+  height: 50px;
+}
+.form-diameter input {
+  width: 87px;
+  height: 37px;
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid #c6c6c6;
+  background-color: #f2f2f2;
+  position: relative;
+  margin-left: 46px;
+}
+.form-diameter label {
+  padding-left: 15px;
+}
+.form-diameter__desc {
+  display: block;
+  margin: 25px 0;
+  position: relative;
+  font-size: 12px;
+}
+.form-diameter__desc::before, .form-diameter__desc::after {
+  content: "";
+  width: 90px;
+  height: 1px;
+  background-color: #f2f2f2;
+  position: absolute;
+  top: 6px;
+}
+.form-diameter__desc::before {
+  left: -105px;
+}
+.form-diameter__desc::after {
+  right: -105px;
+}
+.form-diameter__range {
+  font-size: 12px;
+}
+.form-diameter__range span {
+  font-size: 18px;
+}
+.form-diameter__range span:nth-child(1) {
+  margin-right: 20px;
+}
+.form-type:target::after {
+  content: "Тип изделия";
+  left: -215px;
+  top: 61px;
+}
+.form-applying:target::after {
+  content: "Применение";
+  left: -215px;
+  top: 122px;
+}
+.form-other {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.form-other label {
+  margin-right: 10px;
+  font-size: 14px;
+}
+.form-other input {
+  width: 200px;
+  border: 2px solid #c6c6c6;
+}
+.form-other:target::after {
+  content: "Другое";
+  left: -215px;
+  top: 183px;
+}
+.form-style {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding-top: 13px;
+  padding-left: 35px;
+}
+.form-style label:hover > .form-style__option {
+  background-color: #4f4e4e;
+  color: white;
+}
+.form-style label:hover > .form-style__option::after {
+  border-left: 12px solid #4f4e4e;
+}
+.form-style__option {
+  padding: 8px 0 8px 35px;
+  width: 295px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+.form-style__option::after {
+  content: "";
+  border: 16px solid transparent;
+  border-left: 12px solid transparent;
+  position: absolute;
+  top: 0;
+  right: -28px;
+}
+.form-style__option::before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 11px;
+  width: 5px;
+  height: 5px;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  transform: rotate(-135deg);
+  transition-duration: 400ms;
+}
+.form-style input {
+  visibility: hidden;
+  width: 0;
+}
+.form-style input:checked + .form-style__option {
+  background-color: #c54004;
+  color: white;
+}
+.form-style input:checked + .form-style__option::after {
+  border-left: 12px solid #c54004;
+}
+.form-style input:checked + .form-style__option::before {
+  transform: rotate(-45deg);
+  width: 10px;
+  top: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
