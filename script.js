@@ -34,10 +34,12 @@ window.addEventListener("DOMContentLoaded", () => {
         content = "";
         for (let key in data) {
           if (key === "diameter" && data[key].length !== 0) {
-            if (+value >= 4 && +value <= 98) {
+            if (+data.diameter >= 4 && +data.diameter <= 98) {
               content = "Диаметр " + data[key] + ",";
+              console.log('добавление')
             } else {
               input.value = "";
+              console.log('сброс')
             }
           } else {
             content += data[key] + " ";
