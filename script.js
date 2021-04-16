@@ -49,7 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
           blockContent.textContent = content.split(",").join(", ");
           blockContent.style.color = "#898989";
         } else {
-          blockContent.textContent = "Выберете нужные параметры";
+          blockContent.textContent = "Выберите нужные параметры";
           blockContent.style.color = "#3d3d3d";
         }
       };
